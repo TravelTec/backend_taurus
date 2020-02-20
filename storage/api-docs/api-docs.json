@@ -1,0 +1,57 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Chat Whatsapp",
+        "description": "API de backend para controle de chat whatsapp empresarial",
+        "contact": {
+            "email": "thallesmendes123@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/licenses": {
+            "get": {
+                "tags": [
+                    "Licenses"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/licenses/{id}": {
+            "get": {
+                "tags": [
+                    "Licenses"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "License id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "License Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Licenses",
+            "description": "Manager Licenses"
+        }
+    ]
+}
