@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" type="text/css"> 
 
         <!-- Styles -->
         <style>
@@ -66,6 +67,12 @@
 
             .padding-bloco-texto{
                 padding: 0px 23px;
+                color: #000;
+            }
+
+            .btn-test:hover{
+                border: 2px solid #1ab394 !important;
+                color: #1ab394 !important;
             }
         </style>
     </head>
@@ -145,75 +152,603 @@
         </nav>
 
       <div class="container-fluid" style="padding: 0">
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
 
-        <div id="introducao-api">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Introdução à API</h2>
-            <hr style="border-top: 1px solid #f3f3f3">
-            <p class="padding-bloco-texto">Através da interface da api Taurus é possível conversar com o sistema e comandar todas as ações principais de gerenciamento.
-            <br><br>
-            Abaixo, descrição técnica da utilização base da api Taurus:
-                <br>
-                <ul>
-                    <li>Modelo: REST</li>
-                    <li>Resposta: JSON</li>
-                    <li>Endereço base: <code>api.taurusmulticanal.com.br</code></li>
-                    <li>Protocolo: Seguro, usar sempre <code>https://</code> como prefixo</li> 
-                </ul>
-            </p>
+                <div id="introducao-api">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Introdução à API</h2>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                    <p class="padding-bloco-texto">Através da interface da api Taurus é possível conversar com o sistema e comandar todas as ações principais de gerenciamento.
+                    <br><br>
+                    Abaixo, descrição técnica da utilização base da api Taurus:
+                        <br>
+                        <ul>
+                            <li>Modelo: REST</li>
+                            <li>Resposta: JSON</li>
+                            <li>Endereço base: <code>api.taurusmulticanal.com.br</code></li>
+                            <li>Protocolo: Seguro, usar sempre <code>https://</code> como prefixo</li> 
+                        </ul>
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
 
-        <div id="autenticacao">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Autenticação</h2>
-            <hr style="border-top: 1px solid #f3f3f3">
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <div id="autenticacao">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Autenticação</h2>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                </div>
 
-        <div id="erros">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Erros</h2>
-            <hr style="border-top: 1px solid #f3f3f3">
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
 
-        <div id="listar-licencas">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Listar licenças</h2>
-            <p class="padding-bloco-texto">
-                Retorna uma lista das licenças cadastradas em sua conta pela ordem de criação, da mais à menos recente.
-            </p>
-            <hr style="border-top: 1px solid #f3f3f3">
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <div id="erros">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Erros</h2>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                </div>
 
-        <div id="buscar-licencas">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Buscar licença</h2>
-            <p class="padding-bloco-texto">
-                Retorna os dados de uma licença específica.
-            </p>
-            <hr style="border-top: 1px solid #f3f3f3">
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
 
-        <div id="criar-licencas">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Criar licença</h2>
-            <p class="padding-bloco-texto">
-                Cria uma nova licença.
-            </p>
-            <hr style="border-top: 1px solid #f3f3f3">
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <div id="listar-licencas">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Listar licenças</h2>
+                    <p class="padding-bloco-texto">
+                        Retorna uma lista das licenças cadastradas em sua conta pela ordem de criação, da mais a menos recente.
+                    </p>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                    <p class="padding-bloco-texto" style="color:#7b7b7b !important">
+                        <span style="background-color: #1ab394;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 10px">GET</span> https://api.taurusmulticanal.com.br/api/licenses
+                    </p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist" style="padding: 0 22px;border: none;background-color: #c1c1c1;height: 21px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">cURL</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Node</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Javascript</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Python</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab5-tab" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Ruby</a>
+                        </li> 
+                    </ul>
+                    <div class="tab-content" id="myTabContent" style="padding: 0 22px;background-color: #d6d6d6;">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <div>
+                                <code>
+                                    curl --request GET \
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">--url https://api.taurusmulticanal.com.br/api/licenses</span>
+                                </code> 
+                            </div>
+                        </div> 
+                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                var http = require("http");
+                                <br><br>
+                                var options = {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"method": "GET",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"hostname": "https://api.taurusmulticanal.com.br",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"port": "8000",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"path": "/api/licenses" </span>
+                                    <br>
+                                };
+                                <br><br>
+                                var req = http.request(options, function (res) {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">var chunks = [];</span>
+                                    <br> <br>
+                                    <span style="position: relative;margin-left: 13px">res.on("data", function (chunk) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">chunks.push(chunk);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                    <br> 
+                                    <span style="position: relative;margin-left: 13px">res.on("end", function () {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">var body = Buffer.concat(chunks);</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(body.toString());</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                req.end();
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                var data = null;
+                                <br><br>
+                                var xhr = new XMLHttpRequest();
+                                <br>
+                                xhr.withCredentials = true;
+                                <br><br>
+                                xhr.addEventListener("readystatechange", function () {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">if (this.readyState === 4) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(this.responseText);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">}</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                xhr.open("GET", "https://api.taurusmulticanal.com.br/api/licenses");
+                                <br> 
+                                xhr.send(data);
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                import requests
+                                <br><br>
+                                url = "https://api.taurusmulticanal.com.br/api/licenses"
+                                <br><br>
+                                response = requests.request("GET", url)
+                                <br><br>
+                                print(response.text)
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                require 'uri'
+                                <br>
+                                require 'net/http'
+                                <br><br>
 
-        <div id="criar-licencas">
-            <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Excluir licença</h2>
-            <p class="padding-bloco-texto">
-                Exclui permanentemente uma licença cadastrada anteriormente.
-            </p>
-            <hr style="border-top: 1px solid #f3f3f3">
+                                url = URI("https://api.taurusmulticanal.com.br/api/licenses")
+                                <br><br>
+
+                                http = Net::HTTP.new(url.host, url.port)
+                                <br>br
+
+                                request = Net::HTTP::Get.new(url) 
+
+                                response = http.request(request)
+                                <br>
+                                puts response.read_body
+                            </code>
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa;padding: 0px 15px 0px 0px;"> 
+                <p class="padding-bloco-texto" style="color:#7b7b7b !important;padding: 7px 15px;background-color: #fff;margin-top: 134px;margin-bottom: 0px;border-top: 1px solid #f3f3f3;text-align: right;">
+                    <button class="btn btn-light btn-test" style="background-color: #fff;border: 2px solid #eaeaea;"><i class="fas fa-search" style="font-size: 14px;"></i> Testar</button>
+                </p> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <div id="buscar-licencas">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Buscar licença</h2>
+                    <p class="padding-bloco-texto">
+                        Retorna os dados de uma licença específica.
+                    </p>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                    <p class="padding-bloco-texto" style="color:#7b7b7b !important">
+                        <span style="background-color: #1ab394;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 10px">GET</span> https://api.taurusmulticanal.com.br/api/licenses/<span style="color:#000;text-decoration: underline;">id</span>
+                    </p>
+                    <ul class="nav nav-tabs" id="tab-listar-licencas" role="tablist" style="padding: 0 22px;border: none;background-color: #c1c1c1;height: 21px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="curl-listar-licencas-tab" data-toggle="tab" href="#curl-listar-licencas" role="tab" aria-controls="curl-listar" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">cURL</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="node-listar-licencas-tab" data-toggle="tab" href="#node-listar-licencas" role="tab" aria-controls="node-listar" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Node</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="js-listar-licencas-tab" data-toggle="tab" href="#js-listar-licencas" role="tab" aria-controls="js-listar-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Javascript</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="python-listar-licencas-tab" data-toggle="tab" href="#python-listar-licencas" role="tab" aria-controls="python-listar-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Python</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="ruby-listar-licencas-tab" data-toggle="tab" href="#ruby-listar-licencas" role="tab" aria-controls="ruby-listar-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Ruby</a>
+                        </li> 
+                    </ul>
+                    <div class="tab-content" id="tab-listar-licencas-conteudo" style="padding: 0 22px;background-color: #d6d6d6;">
+                        <div class="tab-pane fade show active" id="curl-listar-licencas" role="tabpanel" aria-labelledby="curl-listar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <div>
+                                <code>
+                                    curl --request GET \
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">--url https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd></span>
+                                </code> 
+                            </div>
+                        </div> 
+                        <div class="tab-pane fade" id="node-listar-licencas" role="tabpanel" aria-labelledby="node-listar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                var http = require("http");
+                                <br><br>
+                                var options = {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"method": "GET",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"hostname": "https://api.taurusmulticanal.com.br",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"port": "8000",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"path": "/api/licenses/<kbd>id</kbd>" </span>
+                                    <br>
+                                };
+                                <br><br>
+                                var req = http.request(options, function (res) {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">var chunks = [];</span>
+                                    <br> <br>
+                                    <span style="position: relative;margin-left: 13px">res.on("data", function (chunk) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">chunks.push(chunk);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                    <br> 
+                                    <span style="position: relative;margin-left: 13px">res.on("end", function () {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">var body = Buffer.concat(chunks);</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(body.toString());</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                req.end();
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="js-listar-licencas" role="tabpanel" aria-labelledby="js-listar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                var data = null;
+                                <br><br>
+                                var xhr = new XMLHttpRequest();
+                                <br>
+                                xhr.withCredentials = true;
+                                <br><br>
+                                xhr.addEventListener("readystatechange", function () {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">if (this.readyState === 4) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(this.responseText);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">}</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                xhr.open("GET", "https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd>");
+                                <br> 
+                                xhr.send(data);
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="python-listar-licencas" role="tabpanel" aria-labelledby="python-listar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                import requests
+                                <br><br>
+                                url = "https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd>"
+                                <br><br>
+                                response = requests.request("GET", url)
+                                <br><br>
+                                print(response.text)
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="ruby-listar-licencas" role="tabpanel" aria-labelledby="ruby-listar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                require 'uri'
+                                <br>
+                                require 'net/http'
+                                <br><br>
+
+                                url = URI("https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd>")
+                                <br><br>
+
+                                http = Net::HTTP.new(url.host, url.port)
+                                <br>br
+
+                                request = Net::HTTP::Get.new(url) 
+
+                                response = http.request(request)
+                                <br>
+                                puts response.read_body
+                            </code>
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <div id="criar-licencas">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Criar licença</h2>
+                    <p class="padding-bloco-texto">
+                        Cria uma nova licença.
+                    </p>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                    <p class="padding-bloco-texto" style="color:#7b7b7b !important">
+                        <span style="background-color: #1c84c6;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 10px">POST</span> https://api.taurusmulticanal.com.br/api/licenses
+                    </p>
+
+                    <ul class="nav nav-tabs" id="tab-criar-licencas" role="tablist" style="padding: 0 22px;border: none;background-color: #c1c1c1;height: 21px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="curl-criar-licencas-tab" data-toggle="tab" href="#curl-criar-licencas" role="tab" aria-controls="curl-criar" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">cURL</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="node-criar-licencas-tab" data-toggle="tab" href="#node-criar-licencas" role="tab" aria-controls="node-criar" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Node</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="js-criar-licencas-tab" data-toggle="tab" href="#js-criar-licencas" role="tab" aria-controls="js-criar-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Javascript</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="python-criar-licencas-tab" data-toggle="tab" href="#python-criar-licencas" role="tab" aria-controls="python-criar-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Python</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="ruby-criar-licencas-tab" data-toggle="tab" href="#ruby-criar-licencas" role="tab" aria-controls="ruby-criar-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Ruby</a>
+                        </li> 
+                    </ul>
+                    <div class="tab-content" id="tab-criar-licencas-conteudo" style="padding: 0 22px;background-color: #d6d6d6;">
+                        <div class="tab-pane fade show active" id="curl-criar-licencas" role="tabpanel" aria-labelledby="curl-criar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 854px;"> 
+                            <div>
+                                <code>
+                                    curl --request POST \
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">--url https://api.taurusmulticanal.com.br/api/licenses/</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">--data '{"signature":"00aa00aa00aa00aa","status":1,"contact":"Nome Contato", "email": "emailcontato@email.com", "cellphone": "11999999999", "cellphone": "11999999999", "credits":10.00}'</span>
+                                </code> 
+                            </div>
+                        </div> 
+                        <div class="tab-pane fade" id="node-criar-licencas" role="tabpanel" aria-labelledby="node-criar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 854px;"> 
+                            <code>
+                                var http = require("http");
+                                <br><br>
+                                var options = {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"method": "POST",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"hostname": "https://api.taurusmulticanal.com.br",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"port": "8000",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"path": "/api/licenses" </span>
+                                    <br>
+                                };
+                                <br><br>
+                                var req = http.request(options, function (res) {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">var chunks = [];</span>
+                                    <br> <br>
+                                    <span style="position: relative;margin-left: 13px">res.on("data", function (chunk) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">chunks.push(chunk);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                    <br> 
+                                    <span style="position: relative;margin-left: 13px">res.on("end", function () {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">var body = Buffer.concat(chunks);</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(body.toString());</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                });
+                                <br><br>
+                                req.write(
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">JSON.stringify({ </span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">signature: '00aa00aa00aa00aa',</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">status: 1,</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">contact: 'Nome Contato',</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">email: 'emailcontato@email.com',</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">cellphone: '11999999999',</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">cellphone_app: '11999999999',</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">credits: 10 </span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">})</span>
+                                    <br>
+                                );
+                                <br><br> 
+                                req.end();
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="js-criar-licencas" role="tabpanel" aria-labelledby="js-criar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 854px;"> 
+                            <code>
+                                var data = JSON.stringify({
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"signature": "00aa00aa00aa00aa",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"status": 1,</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"contact": "Nome Contato",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"email": "emailcontato@email.com",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"cellphone": "11999999999",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"cellphone_app": "11999999999",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"credits": 10</span>
+                                    <br>
+                                });
+                                <br><br>
+                                var xhr = new XMLHttpRequest();
+                                <br>
+                                xhr.withCredentials = true;
+                                <br><br>
+                                xhr.addEventListener("readystatechange", function () {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">if (this.readyState === 4) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(this.responseText);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">}</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                xhr.open("POST", "https://api.taurusmulticanal.com.br/api/licenses");
+                                <br> 
+                                xhr.send(data);
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="python-criar-licencas" role="tabpanel" aria-labelledby="python-criar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 854px;"> 
+                            <code>
+                                import requests
+                                <br><br>
+                                url = "https://api.taurusmulticanal.com.br/api/licenses"
+                                <br><br>
+                                payload = "{\"signature\":\"00aa00aa00aa00aa\",\"status\":1,\"contact\":\"Nome Contato\", \"email\":\"emailcontato@email.com\", \"cellphone\":\"11999999999\", \"cellphone_app\":\"11999999999\", \"credits\":10.00\n}"
+                                <br><br>
+                                response = requests.request("POST", url, data=payload)
+                                <br><br>
+                                print(response.text)
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="ruby-criar-licencas" role="tabpanel" aria-labelledby="ruby-criar-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 854px;"> 
+                            <code>
+                                require 'uri'
+                                <br>
+                                require 'net/http'
+                                <br><br>
+
+                                url = URI("https://api.taurusmulticanal.com.br/api/licenses")
+                                <br><br>
+
+                                http = Net::HTTP.new(url.host, url.port)
+                                <br><br>
+
+                                request = Net::HTTP::Post.new(url) 
+                                <br><br>
+                                request.body = "{\"signature\":\"00aa00aa00aa00aa\",\"status\":1,\"contact\":\"Nome Contato\", \"email\":\"emailcontato@email.com\", \"cellphone\":\"11999999999\", \"cellphone_app\":\"11999999999\", \"credits\":10.00\n}"
+                                <br><br>
+
+                                response = http.request(request)
+                                <br><br>
+                                puts response.read_body
+                            </code>
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <div id="criar-licencas">
+                    <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Excluir licença</h2>
+                    <p class="padding-bloco-texto">
+                        Exclui permanentemente uma licença cadastrada anteriormente.
+                    </p>
+                    <hr style="border-top: 1px solid #f3f3f3">
+                </div>
+
+            </div> 
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
+
         </div>
 
       </div>
@@ -222,9 +757,10 @@
 
   </div> 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
 
@@ -236,7 +772,7 @@
     });
 
     var $doc = $('html, body');
-$('a').click(function() {
+$('.scrollSuave').click(function() {
     $doc.animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 1000);
