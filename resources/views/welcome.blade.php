@@ -74,6 +74,12 @@
                 border: 2px solid #1ab394 !important;
                 color: #1ab394 !important;
             }
+
+            #sidebar-wrapper{
+                float: left;  
+  height:  100vh;
+                overflow: auto;
+            } 
         </style>
     </head>
     <body>
@@ -85,16 +91,16 @@
         <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action bg-light">
                 <strong style="font-weight: 700">VISÃO GERAL</strong>
-                <a href="#" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;">Introdução à API</a>  
+                <a href="#introducao-api" class="list-group-item list-group-item-action bg-light scrollSuave" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;">Introdução à API</a>  
                 <a href="#" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;">Autenticação</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;">Erros</a>
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-light">
                 <strong style="font-weight: 700">LICENÇAS</strong>
-                <a href="#contact" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #1ab394;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">GET</span> Listar licenças</a> 
-                <a href="#" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #1ab394;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">GET</span> Buscar licença</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #1c84c6;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">POST</span> Criar licença</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #ed5565;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">DELETE</span> Excluir licença</a>
+                <a href="#listar-licencas" class="list-group-item list-group-item-action bg-light scrollSuave" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #1ab394;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">GET</span> Listar licenças</a> 
+                <a href="#buscar-licencas" class="list-group-item list-group-item-action bg-light scrollSuave" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #1ab394;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">GET</span> Buscar licença</a>
+                <a href="#criar-licencas" class="list-group-item list-group-item-action bg-light scrollSuave" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #1c84c6;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">POST</span> Criar licença</a>
+                <a href="#excluir-licencas" class="list-group-item list-group-item-action bg-light scrollSuave" style="color: #000;padding: 5px 21px 0px 21px;text-decoration: none;border-bottom: none;font-size: 14px;"><span style="background-color: #ed5565;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 5px">DELETE</span> Excluir licença</a>
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-light">
                 <strong style="font-weight: 700">DEPARTAMENTOS</strong>
@@ -736,12 +742,139 @@
 
         <div class="row">
             <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
-                <div id="criar-licencas">
+                <div id="excluir-licencas">
                     <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Excluir licença</h2>
                     <p class="padding-bloco-texto">
                         Exclui permanentemente uma licença cadastrada anteriormente.
                     </p>
                     <hr style="border-top: 1px solid #f3f3f3">
+                    <p class="padding-bloco-texto" style="color:#7b7b7b !important">
+                        <span style="background-color: #ed5565;padding: 3px 7px 1px 7px;font-size: 10px;color: #fff;border-radius: 13px;margin-right: 10px">DELETE</span> https://api.taurusmulticanal.com.br/api/licenses/<span style="color:#000;text-decoration: underline;">id</span>
+                    </p>
+                    <ul class="nav nav-tabs" id="tab-excluir-licencas" role="tablist" style="padding: 0 22px;border: none;background-color: #c1c1c1;height: 21px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="curl-excluir-licencas-tab" data-toggle="tab" href="#curl-excluir-licencas" role="tab" aria-controls="curl-excluir" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">cURL</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="node-excluir-licencas-tab" data-toggle="tab" href="#node-excluir-licencas" role="tab" aria-controls="node-excluir" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Node</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" id="js-excluir-licencas-tab" data-toggle="tab" href="#js-excluir-licencas" role="tab" aria-controls="js-excluir-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Javascript</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="python-excluir-licencas-tab" data-toggle="tab" href="#python-excluir-licencas" role="tab" aria-controls="python-excluir-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Python</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" id="ruby-excluir-licencas-tab" data-toggle="tab" href="#ruby-excluir-licencas" role="tab" aria-controls="ruby-excluir-licencas" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #c1c1c1;color: #fff;">Ruby</a>
+                        </li> 
+                    </ul>
+                    <div class="tab-content" id="tab-excluir-licencas-conteudo" style="padding: 0 22px;background-color: #d6d6d6;">
+                        <div class="tab-pane fade show active" id="curl-excluir-licencas" role="tabpanel" aria-labelledby="curl-excluir-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <div>
+                                <code>
+                                    curl --request DELETE \
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">--url https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd></span>
+                                </code> 
+                            </div>
+                        </div> 
+                        <div class="tab-pane fade" id="node-excluir-licencas" role="tabpanel" aria-labelledby="node-excluir-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                var http = require("http");
+                                <br><br>
+                                var options = {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"method": "DELETE",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"hostname": "https://api.taurusmulticanal.com.br",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"port": "8000",</span>
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">"path": "/api/licenses/<kbd>id</kbd>" </span>
+                                    <br>
+                                };
+                                <br><br>
+                                var req = http.request(options, function (res) {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">var chunks = [];</span>
+                                    <br> <br>
+                                    <span style="position: relative;margin-left: 13px">res.on("data", function (chunk) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">chunks.push(chunk);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                    <br> 
+                                    <span style="position: relative;margin-left: 13px">res.on("end", function () {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">var body = Buffer.concat(chunks);</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(body.toString());</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">});</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                req.end();
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="js-excluir-licencas" role="tabpanel" aria-labelledby="js-excluir-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                var data = null;
+                                <br><br>
+                                var xhr = new XMLHttpRequest();
+                                <br>
+                                xhr.withCredentials = true;
+                                <br><br>
+                                xhr.addEventListener("readystatechange", function () {
+                                    <br>
+                                    <span style="position: relative;margin-left: 13px">if (this.readyState === 4) {</span>
+                                        <br>
+                                        <span style="position: relative;margin-left: 26px">console.log(this.responseText);</span>
+                                        <br>
+                                    <span style="position: relative;margin-left: 13px">}</span>
+                                    <br>
+                                });
+                                <br><br> 
+                                xhr.open("DELETE", "https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd>");
+                                <br> 
+                                xhr.send(data);
+                                <br>
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="python-excluir-licencas" role="tabpanel" aria-labelledby="python-excluir-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                import requests
+                                <br><br>
+                                url = "https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd>"
+                                <br><br>
+                                response = requests.request("DELETE", url)
+                                <br><br>
+                                print(response.text)
+                            </code>
+                        </div> 
+                        <div class="tab-pane fade" id="ruby-excluir-licencas" role="tabpanel" aria-labelledby="ruby-excluir-licencas-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                            <code>
+                                require 'uri'
+                                <br>
+                                require 'net/http'
+                                <br><br>
+
+                                url = URI("https://api.taurusmulticanal.com.br/api/licenses/<kbd>id</kbd>")
+                                <br><br>
+
+                                http = Net::HTTP.new(url.host, url.port)
+                                <br>br
+
+                                request = Net::HTTP::Delete.new(url) 
+
+                                response = http.request(request)
+                                <br>
+                                puts response.read_body
+                            </code>
+                        </div> 
+                    </div>
                 </div>
 
             </div> 
@@ -749,6 +882,15 @@
 
             </div>
 
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8" style="border-right: 1px solid #ddd;padding-right: 0;">
+                <hr>
+            </div>
+            <div class="col-lg-4" style="background-color: #f8f9fa">
+
+            </div>
         </div>
 
       </div>
