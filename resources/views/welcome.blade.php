@@ -73,13 +73,24 @@
             .btn-test:hover{
                 border: 2px solid #1ab394 !important;
                 color: #1ab394 !important;
-            }
-
-            #sidebar-wrapper{
-                float: left;  
-  height:  100vh;
-                overflow: auto;
             } 
+        </style> 
+
+        <style type="text/css">
+            .dropdown-menu{
+                width: 323px !important;
+                padding: 0px !important;
+            }
+ 
+            .string { color: green; }
+            .number { color: darkorange; }
+            .boolean { color: blue; }
+            .null { color: magenta; }
+            .key { color: red; }
+
+            .dropdown-toggle::after{
+                display: none;
+            }
         </style>
     </head>
     <body>
@@ -136,26 +147,7 @@
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <!-- <button class="btn btn-primary" id="menu-toggle">Esconder Menu</button> -->
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li> 
-              </ul>
-            </div> -->
-        </nav>
+    <div id="page-content-wrapper"> 
 
       <div class="container-fluid" style="padding: 0">
         <div class="row">
@@ -197,6 +189,16 @@
                 <div id="autenticacao">
                     <h2 class="mt-4 padding-bloco-texto" style="font-weight: 800">Autenticação</h2>
                     <hr style="border-top: 1px solid #f3f3f3">
+                    <p class="padding-bloco-texto">A autenticação na api do Taurus Multicanal é feita através de uma chave de API. Essa chave/senha serve para que a conta seja corretamente identificada além de conceder informações e permissões para que o sistema se comunique com a API.
+                    <br><br>
+                    A chave pode ser TEST (Teste) ou LIVE (Produção), fazendo com que cada chamada comunique-se com o respectivo ambiente.</p> 
+                    <h4 class="mt-4 padding-bloco-texto" style="font-weight: 800">Recuperando sua chave de API</h4>
+                    <p class="padding-bloco-texto">Ao criar uma conta para utilizar o Taurus Multicanal, a chave de API é criada automaticamente. Acesse https://app.taurusmulticanal.com.br e siga o tutorial abaixo:
+                        <br>
+                    </p>
+                    <div class="card-header">
+                        ESPAÇO PARA O TUTORIAL EM VÍDEO
+                    </div> 
                 </div>
 
             </div>
@@ -265,7 +267,7 @@
                         </li> 
                     </ul>
                     <div class="tab-content" id="myTabContent" style="padding: 0 22px;background-color: #d6d6d6;">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 630px;"> 
                             <div>
                                 <code>
                                     curl --request GET \
@@ -274,7 +276,7 @@
                                 </code> 
                             </div>
                         </div> 
-                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 630px;"> 
                             <code>
                                 var http = require("http");
                                 <br><br>
@@ -315,7 +317,7 @@
                                 <br>
                             </code>
                         </div> 
-                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 630px;"> 
                             <code>
                                 var data = null;
                                 <br><br>
@@ -339,7 +341,7 @@
                                 <br>
                             </code>
                         </div> 
-                        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 630px;"> 
                             <code>
                                 import requests
                                 <br><br>
@@ -350,7 +352,7 @@
                                 print(response.text)
                             </code>
                         </div> 
-                        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 566px;"> 
+                        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab" style="padding: 0 22px;background-color: #d6d6d6;height: 630px;"> 
                             <code>
                                 require 'uri'
                                 <br>
@@ -375,9 +377,46 @@
 
             </div>
             <div class="col-lg-4" style="background-color: #f8f9fa;padding: 0px 15px 0px 0px;"> 
-                <p class="padding-bloco-texto" style="color:#7b7b7b !important;padding: 7px 15px;background-color: #fff;margin-top: 134px;margin-bottom: 0px;border-top: 1px solid #f3f3f3;text-align: right;">
-                    <button class="btn btn-light btn-test" style="background-color: #fff;border: 2px solid #eaeaea;"><i class="fas fa-search" style="font-size: 14px;"></i> Testar</button>
-                </p> 
+                <div class="padding-bloco-texto" style="color:#7b7b7b !important;padding: 7px 15px;background-color: #fff;margin-top: 134px;margin-bottom: 0px;border-top: 1px solid #f3f3f3;text-align: right;">
+ 
+                    <div class="dropdown" style="float: left">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user" style="color:#212529;margin-right: 6px;cursor: pointer"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 style="font-weight: 700;">Query Auth</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <small>api_token</small>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="" value="D7192A1D15CE450E9F10C20E9EABEB86">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a onclick="testar_listar_licencas()"><button class="btn btn-light btn-test" id="btn-test-listar-licencas" style="background-color: #fff;border: 2px solid #eaeaea;"><i class="fas fa-search" style="font-size: 14px;"></i> Testar</button></a>
+                </div> 
+
+                <div>
+                    <ul class="nav nav-tabs" role="tablist" style="padding: 0 22px;border: none;background-color: #949494;height: 21px;margin-top: 2px;margin-bottom: -2px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #949494;color: #fff;"><small style="background-color: #24fd24;border-radius: 15px;color: #24fd24;font-size: 5px;top: -3px;position: relative;">OK</small> 200 OK</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="true" style="font-size: 14px;padding: 0px 11px;border: none;background-color: #949494;color: #fff;"><small style="background-color: #ff0000;border-radius: 15px;color: #ff0000;font-size: 5px;top: -3px;position: relative;">OK</small> 400 Bad Request</a>
+                        </li>   
+                    </ul>
+                    <div id="valor_padrao_listar_licenca" style="background-color: #c1c1c1;margin: 2px 0px"> </div>
+                </div>
+                
             </div>
         </div>
 
@@ -902,24 +941,69 @@
     <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/jquery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://prova.montenegrodigital.com.br/servicos/demo/vendor/bootstrap/js/bootstrap.min.js"></script> 
 
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+        });
 
+        var $doc = $('html, body');
+        $('.scrollSuave').click(function() {
+            $doc.animate({
+                scrollTop: $( $.attr(this, 'href') ).offset().top
+            }, 1000);
+            return false;
+        });  
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
+        $(document).ready(function(){
+            function output(inp) {
+                document.body.appendChild(document.createElement('pre')).innerHTML = inp;
+            }
 
-    var $doc = $('html, body');
-$('.scrollSuave').click(function() {
-    $doc.animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 1000);
-    return false;
-});
-  </script>
+            function exibir_valor_padrao_listar_licenca(){
+                var obj = {"data":[{"id":1,"status":1,"signature":"0","created_at":"2020-02-28 21:20:44","contact":"Reinaldo Batista","email":"reinaldo.batista@gmail.com","cellphone":"0","cellphone_app":"0","credits":10,"updated_at":"2020-02-28 21:20:44"},{"id":2,"status":1,"signature":"D7192A1D15CE450E9F10C20E9EABEB86","created_at":"2020-02-29 20:33:58","contact":"Travel Tec Teste API","email":"raabe@montenegroev.com.br","cellphone":"1100000000","cellphone_app":"1100000000","credits":10,"updated_at":"2020-02-29 20:33:58"}],"server":"localhost","version":"not_defined"};
+
+                var str = JSON.stringify(obj, null, 2); 
+                $("#valor_padrao_listar_licenca").html("<pre>"+JSON.stringify(obj,undefined, 2) +"</pre>");
+            }
+
+            exibir_valor_padrao_listar_licenca();
+        });
+
+        // *************************************************************************
+
+        function testar_listar_licencas(){
+            var api_token = "D7192A1D15CE450E9F10C20E9EABEB86";
+
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://api.taurusmulticanal.com.br/api/licenses",
+              "method": "GET",
+              "headers": {
+                "cache-control": "no-cache",
+                "postman-token": "c19e5125-ac46-14ae-6432-f5a3c59ad54c"
+              }
+            }
+
+            $("#btn-test-listar-licencas").html('<div class="spinner-border spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>'); 
+
+            $.ajax(settings).done(function (response) {
+                $("#btn-test-listar-licencas").html('<i class="fas fa-search" style="font-size: 14px;"></i> Testar');  
+
+                var arr_lista_licencas = [];
+ 
+                for(key in response["data"]) {
+                    if (response["data"][key]["signature"] == "D7192A1D15CE450E9F10C20E9EABEB86") {
+                        arr_lista_licencas.push(response["data"][key]);
+                    } 
+                } 
+                $("#valor_padrao_listar_licenca").html("<pre style='height:630px'>"+JSON.stringify(arr_lista_licencas,undefined, 2) +"</pre>"); 
+            });
+        }
+    </script> 
     </body>
 </html>
