@@ -11,18 +11,23 @@
 |
 */
 
-Route::get('/documentacao', function () {
-    return view('welcome');
-});
+$currentDomain = Request::server('HTTP_HOST');
+if ($currentDomain == 'https://api.taurusmulticanal.com.br') {
+	Route::get('/', function () {
+	    return view('welcome');
+	});
+}else if ($currentDomain == 'https://app.taurusmulticanal.com.br') {
+	Route::get('/', function () {
+	    return view('login');
+	});
+}else{
+	Route::get('/documentacao', function () {
+	    return view('welcome');
+	});
 
-Route::get('/admin', function () {
-    return view('login');
-});
+	Route::get('/admin', function () {
+	    return view('login');
+	});
+} 
 
-Route::get('https://api.taurusmulticanal.com.br', function () {
-    return view('welcome');
-});
 
-Route::get('https://app.taurusmulticanal.com.br', function () {
-    return view('login');
-});
