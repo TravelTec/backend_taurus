@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/documentacao', function () {
     return view('welcome');
+});
+
+Route::get('/admin', function () {
+    return view('login');
+});
+
+Route::get('https://api.taurusmulticanal.com.br', function () {
+    return view('welcome');
+});
+
+Route::get('https://app.taurusmulticanal.com.br', function () {
+    return view('login');
 });
