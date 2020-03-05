@@ -25,9 +25,9 @@ if ($currentDomain == 'https://api.taurusmulticanal.com.br') {
 	    return view('welcome');
 	});
 
-	Route::get('/admin', function () {
+	Route::get('/', function () {
 	    return view('login');
-	});
+	}); 
 } 
 
 
