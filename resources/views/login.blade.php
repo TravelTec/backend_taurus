@@ -116,5 +116,45 @@
         <script src="{{asset('js/inspinia.js')}}"></script>
         <script src="{{asset('js/jscolor.js')}}"></script> 
         <script src="{{asset('js/plugins/pace/pace.min.js')}}"></script> 
+
+        <script type="text/javascript"> 
+            function RealizarLogin(){
+                var api_token = "D7192A1D15CE450E9F10C20E9EABEB86";
+                var email = $("#email").val();
+                var senha = $("#senha").val();
+
+                var settings = {
+                  "async": true,
+                  "crossDomain": true,
+                  "url": "https://api.taurusmulticanal.com.br/api/licenses",
+                  "method": "GET",
+                  "headers": {
+                    "cache-control": "no-cache",
+                    "postman-token": "c19e5125-ac46-14ae-6432-f5a3c59ad54c"
+                  }
+                } 
+
+                $(".btn").html("<img src='{{asset('app-assets/img/loading.gif')}}' style='height: 17px;padding: 0px 36px;'>"); 
+
+                $.ajax(settings).done(function (response) {  
+                    var arr_lista_licencas = [];
+     
+                    for(key in response["data"]) {
+                        if (response["data"][key]["email"] == email) {
+                            arr_lista_licencas.push(response["data"][key]);
+                        } 
+                    } 
+                    if (arr_lista_licencas == null || arr_lista_licencas == '') {
+                        swal({
+                            title: "Não foi possível efetuar o login.",
+                            text: "Verifique seus dados de acesso.",
+                            type: "warning"
+                        }); 
+                    }else{
+                        window.location.href = "/user";
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
