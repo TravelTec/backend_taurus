@@ -28,3 +28,7 @@ Route::get('/', function () {
 Route::get('/user', function () {
 	return view('user');
 }); 
+
+Route::get('/list', function () {
+	return view('listar');
+}); 
