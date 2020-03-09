@@ -126,7 +126,7 @@
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "http://localhost/api/licenses",
+                  "url": "https://app.taurusmulticanal.com.br/api/licenses",
                   "method": "GET",
                   "headers": {
                     "cache-control": "no-cache",
