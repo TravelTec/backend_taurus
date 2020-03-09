@@ -1,4 +1,8 @@
+<?php  
+	session_start();
 
+	$_SESSION['license_id'] = $_GET['a'];
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -22,7 +26,7 @@
                 <img src="{{asset('app-assets/assets/img/logo.png')}}" width="30" height="30" class="d-inline-block mr-1" alt="Logo da Taurus Multicanal">
                 <div class="d-inline-block">
                     <div class="d-flex flex-column text-center">
-                        <span class="font-weight-bold" style="font-size: 1.4em;">Teaurus </span>
+                        <span class="font-weight-bold" style="font-size: 1.4em;">Taurus </span>
                         <span style="font-size: 0.8em;">Multicanal</span>
                     </div>
                 </div>        
@@ -89,6 +93,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown2">
                   <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="list-departments">
+                          Departamentos
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                           Dashboard

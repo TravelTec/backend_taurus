@@ -126,7 +126,7 @@
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "https://app.taurusmulticanal.com.br/api/licenses",
+                  "url": "http://localhost/api/licenses",
                   "method": "GET",
                   "headers": {
                     "cache-control": "no-cache",
@@ -138,6 +138,7 @@
 
                 $.ajax(settings).done(function (response) {  
                     var arr_lista_licencas = [];
+                    var obj = [];
      
                     for(key in response["data"]) {
                         if (response["data"][key]["email"] == email) {
@@ -145,13 +146,20 @@
                         } 
                     } 
                     if (arr_lista_licencas == null || arr_lista_licencas == '') {
+                        $(".btn").html("Acessar sua conta"); 
                         swal({
                             title: "Não foi possível efetuar o login.",
                             text: "Verifique seus dados de acesso.",
                             type: "warning"
                         }); 
                     }else{
-                        window.location.href = "/user";
+                        for(key in response["data"]) {
+                            if (response["data"][key]["email"] == email) {
+                                obj = response["data"][key]["id"];
+                            } 
+                        } 
+                        var myJSON = JSON.stringify(obj);
+                        window.location.href = "/user?a="+myJSON;
                     }
                 });
             }

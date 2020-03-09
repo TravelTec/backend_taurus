@@ -75,7 +75,7 @@
 
 							?>
 							<br> 
-							<?php $array_senhas = array("123mudar", "2545698", "CIC077228", "368kqie452", "10de10de", "789456", "okeuijd", "1a2d5e"); ?>
+							<?php $array_senhas = array("085000", "123mudar", "2545698", "CIC077228", "368kqie452", "10de10de", "789456", "okeuijd", "1a2d5e"); ?>
 							<?php for ($i=0; $i < count($dados_licenca); $i++) {  ?>
 								<div class="row">
 									<div class="col-lg-12">

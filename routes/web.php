@@ -32,3 +32,7 @@ Route::get('/user', function () {
 Route::get('/list', function () {
 	return view('listar');
 }); 
+
+Route::get('/list-departments', function () {
+	return view('departments');
+}); 
