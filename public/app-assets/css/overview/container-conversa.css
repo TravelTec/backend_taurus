@@ -1,0 +1,49 @@
+#container__conversa {
+
+}
+
+#cabecalho__conversa, #container__nova__mensagem {
+    min-height: 65px;
+    background-color: #F9F9F9;
+}
+
+.img-contato2 {
+    width: 45px;
+}
+
+.conversa {
+    display: none;
+}
+
+.conversa__mensagens {
+    max-height: 500px;
+    min-height: 500px;
+    overflow: auto;
+    background-color: #F1F1F1;
+}
+
+.minha__mensagem {
+    text-align: right;
+    max-width: 100%;
+}
+
+.contato__mensagem {
+    text-align: left;
+    max-width: 100%;
+}
+
+.container__mensagem {
+    min-width: 250px;
+    max-width: 500px;
+    display: inline-block;
+}
+
+.contato__mensagem .container__mensagem {   
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+.minha__mensagem .container__mensagem {
+    background-color: #AAD2E9;
+    text-align: left;
+}

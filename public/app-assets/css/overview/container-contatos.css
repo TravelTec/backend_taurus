@@ -1,0 +1,42 @@
+#container__contatos {
+ 
+}
+
+#botao__config {
+    cursor: pointer;
+}
+
+#container__pesquisa  {
+    background-color: #F5F5F5;
+}
+
+#container__pesquisa div {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#container__pesquisa input {
+    font-size: 0.9em;
+}
+
+#lista__contatos {
+    overflow: auto;
+}
+
+.contato {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contato:hover {
+    cursor: pointer;
+    background-color: #AAD2E9;
+}
+
+.img-contato {width: 60px;}
+
+.resumo-mensagem {max-width: 180px;}
+
+#lista__configuracoes .list-group-item {
+    cursor: pointer;
+}

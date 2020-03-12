@@ -1,0 +1,26 @@
+#navbar__primario {background-color: var(--cor-principal);}
+
+#navbar__primario .navbar-brand {
+    color: #FFFFFF !important;
+    font-size: 0.7em;
+}
+
+#logo { width: 50px; }
+
+#logo__texto span:first-child {font-size: 1.4em;}
+
+#logo__texto span:last-child {font-size: 0.9em;}
+
+#navbar__primario .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem !important;
+    color: #FFFFFF !important;
+}
+
+#navbar__secundario .navbar-brand, #navbar-secundaria .nav-link {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+#navbar__secundario .active {
+    border-bottom: solid 3px var(--cor-principal);
+}

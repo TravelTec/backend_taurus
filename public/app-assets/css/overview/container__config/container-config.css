@@ -1,0 +1,11 @@
+.container__config {
+    display: none;
+}
+
+.container__config__cabecalho {
+    background-color: #AAD2E9;
+} 
+
+.container__config__corpo {
+    background-color: #F1F1F1;
+} 
