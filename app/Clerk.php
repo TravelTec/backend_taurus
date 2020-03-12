@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\User;
+
 class Clerk extends Model
 {
     protected $fillable = [
@@ -13,8 +15,15 @@ class Clerk extends Model
         "email"
     ];
 
+    protected $with = ['user'];
+
     public function license()
     {
-        return $this->hasOne('App\License');
+        return $this->belongsTo('App\License');
     }
+
+    public function user(){
+        return $this->hasOne('App\User');
+    }
+
 }

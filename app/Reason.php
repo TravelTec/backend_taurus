@@ -14,6 +14,6 @@ class Reason extends Model
 
     public function license()
     {
-        return $this->hasOne('App\License');
+        return $this->belongsTo('App\License');
     }
 }

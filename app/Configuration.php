@@ -28,12 +28,20 @@ class Configuration extends Model
         "saturday_open",
         "saturday_close",
         "sunday_open",
-        "sunday_close"        
+        "sunday_close" ,
+        "endpoint_chatpro",
+        "token_chatpro",
+        "id_chatpro",
+        "clerk_id"       
     ];
 
     
     public function license()
     {
-        return $this->hasOne('App\License');
+        return $this->belongsTo('App\License');
+    }
+
+    public function clerk() {
+        return $this->belongsTo('App\Clerk');
     }
 }

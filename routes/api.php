@@ -16,26 +16,62 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('licenses', 'LicenseController')->only([
-    'index', 'show', 'store', 'destroy'
-]);
+Route::group(['middleware' => ['auth:api']], function () {
+    Route::resource('licenses', 'LicenseController')->only([
+        'index', 'show', 'store', 'destroy'
+    ]);
+    
+    Route::resource('reasons', 'ReasonController')->only([
+        'index', 'show', 'store', 'destroy'
+    ]);
+    
+    Route::resource('departments', 'DepartmentController')->only([
+        'index', 'show', 'store', 'destroy'
+    ]);
+    
+    Route::resource('departments', 'DepartmentController')->only([
+        'index', 'show', 'store', 'destroy'
+    ]);
+    
+    Route::resource('clerks', 'ClerkController')->only([
+        'index', 'show', 'store', 'destroy', 'update'
+    ]);
+    
+    Route::resource('configurations', 'ConfigurationController')->only([
+        'index', 'show', 'store', 'destroy'
+    ]);
+    
+    Route::group(['prefix' => 'operations',  'middleware' => 'verify.config'], function() {
+        Route::get('contacts', 'OperationsController@contacts');
+        Route::post('send-message', 'OperationsController@sendMessage');
+        Route::get('generate-qrcode', 'OperationsController@generateQrCode');
+        Route::post('get-profile', 'OperationsController@getProfile');
+        Route::get('reload', 'OperationsController@reload');
+        Route::post('send-location', 'OperationsController@sendLocation');
+        Route::post('send-file', 'OperationsController@sendFile');
+        Route::get('status', 'OperationsController@status');
+        Route::post('webhook', 'OperationsController@webhook');
+    });
+    
+    
+    Route::group(['prefix' => 'messages'], function () {
+        Route::post('receive/{licenseId}', 'MessageController@receive');
+        Route::get('list/{sessionId}', 'MessageController@getMessagesOfSession');    
+    });
+    
+    Route::group(['prefix' => 'sessions'], function () {
+        Route::get('active/{clerkId}', 'SessionController@listSessionsActive');    
+    });
+});
 
-Route::resource('reasons', 'ReasonController')->only([
-    'index', 'show', 'store', 'destroy'
-]);
 
-Route::resource('departments', 'DepartmentController')->only([
-    'index', 'show', 'store', 'destroy'
-]);
+Route::group(['middleware' => ['verify.token']], function () {
 
-Route::resource('departments', 'DepartmentController')->only([
-    'index', 'show', 'store', 'destroy'
-]);
+    Route::resource('users', 'UserController')->only([
+        'index', 'show', 'store', 'destroy', 'update'
+    ]); 
+});
 
-Route::resource('clerks', 'ClerkController')->only([
-    'index', 'show', 'store', 'destroy', 'update'
-]);
 
-Route::resource('configurations', 'ConfigurationController')->only([
-    'index', 'show', 'store', 'destroy'
-]);
+
+
