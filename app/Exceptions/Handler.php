@@ -6,6 +6,11 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use \Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
+use App\Exceptions\ConfigurationException;
+use App\Exceptions\ServiceException;
+use Illuminate\Auth\AuthenticationException;
+
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -31,12 +36,12 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Exception  $exception
+     * @param  Throwable  $exception
      * @return void
      *
-     * @throws \Exception
+     * @throws Throwable
      */
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         parent::report($exception);
     }
@@ -50,7 +55,7 @@ class Handler extends ExceptionHandler
      *
      * @throws \Exception
      */
-    public function render($request, Exception $e)
+    public function render($request, Throwable $e)
     {
 
         $response = [
@@ -68,14 +73,22 @@ class Handler extends ExceptionHandler
         if ($this->isHttpException($e)) {
             $status = $e->getStatusCode();
         }
+        
+        if($e instanceof ServiceException) {
+            $status = $e->getStatus();
+        }
 
         if ($e instanceof ModelNotFoundException) {
             $status = 404;
         }
 
+        if($e instanceof AuthenticationException) {
+            $status = 401;
+        }
+    
         if($e instanceof ValidationException) {
             $response['errors'] = $e->errors();        
-        }
+        }        
         
         return response()->json($response, $status);
 
