@@ -54,8 +54,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     });
     
     
-    Route::group(['prefix' => 'messages'], function () {
-        Route::post('receive/{licenseId}', 'MessageController@receive');
+    Route::group(['prefix' => 'messages'], function () {        
         Route::get('list/{sessionId}', 'MessageController@getMessagesOfSession');    
     });
     
@@ -71,6 +70,8 @@ Route::group(['middleware' => ['verify.token']], function () {
         'index', 'show', 'store', 'destroy', 'update'
     ]); 
 });
+
+Route::post('receive/{licenseId}', 'MessageController@receive');
 
 
 
