@@ -16,11 +16,11 @@
 Route::get('/', function () {
 	$domain = $_SERVER['HTTP_HOST'];
 	if ($domain == 'app.taurusmulticanal.com.br') {
-		return view('login');
+		return view('teste');
 	}else if ($domain == 'api.taurusmulticanal.com.br') {
 		return view('welcome');
 	}else{
-		return view('login');
+		return view('teste');
 	}
     
 }); 
