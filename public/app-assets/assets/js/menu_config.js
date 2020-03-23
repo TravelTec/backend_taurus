@@ -24,7 +24,7 @@ $('#botao__meuperfil, #botao__meuperfil__detalhe__voltar, #botao__meuperfil__det
 $('#botao__meuperfil__voltar').on('click', evento => navegacaoConfiguracao('mensagem__taurus'))
 $('#botao__meuperfil__editar').on('click', evento => navegacaoConfiguracao('container__meuperfil__detalhe'))
 $('#botao__estancia, #botao__estancia__detalhe__voltar, #botao__estancia__detalhe__salvar').on('click', evento => navegacaoConfiguracao('container__estancia'))
-$('#botao__estancia__editar').on('click', evento => navegacaoConfiguracao('container__estancia__detalhe'))
+$('#botao__estancia__novo').on('click', evento => navegacaoConfiguracao('container__estancia__detalhe'))
 $('#botao__estancia__voltar').on('click', evento => navegacaoConfiguracao('mensagem__taurus'))
 $('#botao__departamentos, #botao__departamentos__detalhe__voltar, #botao__departamentos__detalhe__salvar').on('click', evento => navegacaoConfiguracao('container__departamentos'))
 $('#botao__departamentos__voltar').on('click', evento => navegacaoConfiguracao('mensagem__taurus'))

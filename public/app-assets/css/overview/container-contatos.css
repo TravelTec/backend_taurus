@@ -21,6 +21,7 @@
 
 #lista__contatos {
     overflow: auto;
+    height: 580px;
 }
 
 .contato {

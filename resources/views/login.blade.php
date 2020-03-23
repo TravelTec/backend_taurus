@@ -1,9 +1,3 @@
-<?php  
-    ini_set("display_errors", 1);
-    ini_set("track_errors", 1);
-    ini_set("html_errors", 1);
-    error_reporting(E_ALL);
-?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -118,6 +112,11 @@
         <script src="{{asset('app-assets/js/plugins/sweetalert/sweetalert.min.js')}}"></script>  
 
         <script type="text/javascript"> 
+            $(document).ready(function(){
+                localStorage.removeItem('dados_sessao_cliente');
+                localStorage.removeItem('dados_sessao_clerk');
+            });
+
             function RealizarLogin(){ 
                 var email = $("#email").val();
                 var senha = $("#senha").val(); 
@@ -139,6 +138,7 @@
                             var escrever = $.parseJSON(resposta); 
 
                             var dados_sessao_cliente = []; 
+                            var dados_sessao_clerk = []; 
 
                             if (escrever[0]["dados_licenca"]["credits"] <= '0.00' || escrever[0]["dados_licenca"]["credits"] <= '0') {
                                 swal({
@@ -167,6 +167,19 @@
                                 });
                                 dados_sessao_cliente.push(dados_usuario);
                                 localStorage.setItem("dados_sessao_cliente", JSON.stringify(dados_sessao_cliente)); 
+
+                                if (escrever[0]["clerk"] != null || escrever[0]["clerk"] != '') { 
+                                    var dados_clerk = JSON.stringify({
+                                        id_clerk: escrever[0]["clerk"]["id"], 
+                                        name_clerk: escrever[0]["clerk"]["name"], 
+                                        email_clerk: escrever[0]["clerk"]["email"], 
+                                        department_clerk: escrever[0]["clerk"]["department_id"] 
+                                    });
+                                    dados_sessao_clerk.push(dados_clerk);
+                                    localStorage.setItem("dados_sessao_clerk", JSON.stringify(dados_sessao_clerk)); 
+                                }else{
+                                    localStorage.removeItem("dados_sessao_clerk"); 
+                                }
 
                                 window.location.href = '/user';
 
