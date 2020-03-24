@@ -28,7 +28,7 @@
 
 	$nome_final = '';
     if($_FILES['arquivo']['name'] != ''){
-        $nome_final = date("YmdHis").".jpg";
+        $nome_final = date("YmdHis").".png";
         $nome_final = uploadImagem($nome_final);
     }
 

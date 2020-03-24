@@ -29,6 +29,10 @@ Route::get('/user', function () {
 	return view('user');
 }); 
 
+Route::get('/code', function () {
+	return view('code');
+}); 
+
 Route::get('/list', function () {
 	return view('listar');
 }); 
