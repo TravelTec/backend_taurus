@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::get('/user', function () {
 	return view('user');
-}); 
+});  
 
 Route::get('/code', function () {
 	return view('code');
@@ -35,6 +35,10 @@ Route::get('/code', function () {
 
 Route::get('/list', function () {
 	return view('listar');
+}); 
+
+Route::get('/qrcode', function () {
+	return view('qrcode');
 }); 
 
 Route::get('/list-departments', function () {
