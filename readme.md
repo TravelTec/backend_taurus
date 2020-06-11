@@ -30,6 +30,10 @@ insert into oauth_clients
 values(1, null, 'password_client', 'FjRWKj9xSkwCqLyRdt2QiGrEJs87iPRWVdHaJARm', 'http://url-da-api', false, true, false, '2020-03-11 20:00:00', null);
 ```
 
+## ATUALIZAÇÃO 03/06/2020
+- Para funcionamento dessa atualização as novas variaveis de ambiente referente a Chat Pro devem ser definidas, que são: `CHATPRO_ADMIN_HOST`,`CHATPRO_ADMIN_USER`, `CHATPRO_ADMIN_PASSWORD`, a primeira deve se colocar `https://api.chatpro.com.br/painel/ws/endpoint.php`, a variavel serve apenas para caso o endereço mude, mas pode setar esse padrão.
+- Criadas novas rotas para administração das instancias do chat-pro, endpoints adicionados a collection do postman na pasta `Admin Chat Pro`, lembrando que o token de acesso para as rotas é o setado na variavel de ambiente `TOKEN_ADMIN`.
+
 ## Ambiente 
 Configure as variaveis de ambiente de acordo com as configurações de infra necessárias.
 
@@ -45,7 +49,10 @@ Configure as variaveis de ambiente de acordo com as configurações de infra nec
 | DB_DATABASE | Nome do banco de dados || Sim |
 | DB_USERNAME | Usuario de conexão de banco de dados || Sim |
 | DB_PASSWORD | Senha de conexão de banco de dados || Sim |
-| TOKEN_ADMIN | Token usado para acessar o resource /api/users || Sim |
+| TOKEN_ADMIN | Token usado para acessar o resource /api/users e /api/admin/chatpro || Sim |
+| CHATPRO_ADMIN_HOST | Host da API da chat pro de administração || Sim |
+| CHATPRO_ADMIN_USER | Usuario/Email do painel da chat pro || Sim |
+| CHATPRO_ADMIN_PASSWORD | Senha do painel da chat pro || Sim |
 
 ## Resource User
 O Resource de usuarios é utilizado para gerenciar os usuarios da API, esses usuarios são utilizados para criar token de acesso geral ou seja, quando se precisa acessar a API sem que exista nenhum atendente logado. 

@@ -69,6 +69,16 @@ Route::group(['middleware' => ['verify.token']], function () {
     Route::resource('users', 'UserController')->only([
         'index', 'show', 'store', 'destroy', 'update'
     ]); 
+
+    Route::group(['prefix' => 'admin/chatpro'], function() {
+        Route::get('balance', 'ChatProAdminController@balance');                
+        Route::get('instances', 'ChatProAdminController@instances');      
+        Route::post('instances', 'ChatProAdminController@createInstance');
+        Route::put('instances/{code}', 'ChatProAdminController@alterNameInstance');
+        Route::put('instances/webhook/{code}', 'ChatProAdminController@alterWebhook');
+        Route::put('instances/stop/{code}', 'ChatProAdminController@stopInstance');
+        Route::delete('instances/{code}', 'ChatProAdminController@deleteInstance');
+    });
 });
 
 Route::post('receive/{licenseId}', 'MessageController@receive');
