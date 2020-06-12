@@ -34,6 +34,10 @@ values(1, null, 'password_client', 'FjRWKj9xSkwCqLyRdt2QiGrEJs87iPRWVdHaJARm', '
 - Para funcionamento dessa atualização as novas variaveis de ambiente referente a Chat Pro devem ser definidas, que são: `CHATPRO_ADMIN_HOST`,`CHATPRO_ADMIN_USER`, `CHATPRO_ADMIN_PASSWORD`, a primeira deve se colocar `https://api.chatpro.com.br/painel/ws/endpoint.php`, a variavel serve apenas para caso o endereço mude, mas pode setar esse padrão.
 - Criadas novas rotas para administração das instancias do chat-pro, endpoints adicionados a collection do postman na pasta `Admin Chat Pro`, lembrando que o token de acesso para as rotas é o setado na variavel de ambiente `TOKEN_ADMIN`.
 
+## ATUALIZAÇÃO 12/06/2020
+- Para funcionamento da atualização deve ser gerado uma `KEY` no console do google com permissões de uso da API `Distance Matrix API`, e setado na variavel de ambiente `TOKEN_APP_GOOGLE`
+- Criada rota para calculo de distancia entre endereços, a mesma foi adicionada a collection do postman na pasta `Google`.
+
 ## Ambiente 
 Configure as variaveis de ambiente de acordo com as configurações de infra necessárias.
 
@@ -53,6 +57,7 @@ Configure as variaveis de ambiente de acordo com as configurações de infra nec
 | CHATPRO_ADMIN_HOST | Host da API da chat pro de administração || Sim |
 | CHATPRO_ADMIN_USER | Usuario/Email do painel da chat pro || Sim |
 | CHATPRO_ADMIN_PASSWORD | Senha do painel da chat pro || Sim |
+| TOKEN_APP_GOOGLE | Token gerado no console do google para uso das APIs || Sim |
 
 ## Resource User
 O Resource de usuarios é utilizado para gerenciar os usuarios da API, esses usuarios são utilizados para criar token de acesso geral ou seja, quando se precisa acessar a API sem que exista nenhum atendente logado. 

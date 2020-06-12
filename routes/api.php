@@ -61,6 +61,10 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix' => 'sessions'], function () {
         Route::get('active/{clerkId}', 'SessionController@listSessionsActive');    
     });
+
+    Route::group(['prefix' => 'google'], function () {
+        Route::get('distance/calcule/{origin}/{destine}', 'GoogleController@calculeDistance');
+    });
 });
 
 
