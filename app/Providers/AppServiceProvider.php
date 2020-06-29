@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 use App\Services\ChatProService;
 use App\Services\ChatProAdminService;
+use App\Services\GoogleService;
 use App\Business\MessageBusiness;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(ChatProAdminService::class, function($app){
             return new ChatProAdminService();
+        });
+
+        $this->app->bind(GoogleService::class, function($app){
+            return new GoogleService();
         });
 
         $this->app->bind(MessageBusiness::class, function($app){
