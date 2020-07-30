@@ -32,7 +32,9 @@ class Configuration extends Model
         "endpoint_chatpro",
         "token_chatpro",
         "id_chatpro",
-        "clerk_id"       
+        "clerk_id",
+        "page_id",
+        "catalog_id"
     ];
 
     

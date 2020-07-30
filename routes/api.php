@@ -49,8 +49,20 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::get('reload', 'OperationsController@reload');
         Route::post('send-location', 'OperationsController@sendLocation');
         Route::post('send-file', 'OperationsController@sendFile');
+        Route::post('send-product/{id}', 'OperationsController@sendProduct');
         Route::get('status', 'OperationsController@status');
         Route::post('webhook', 'OperationsController@webhook');
+    });
+
+    Route::group(['prefix' => 'facebook',  'middleware' => 'verify.config'], function() {
+        Route::get('products', 'FacebookController@products');             
+        Route::get('photos', 'FacebookController@photos');             
+        Route::get('posts', 'FacebookController@posts');             
+        Route::get('products/{id}', 'FacebookController@productById');
+        Route::post('products', 'FacebookController@createProduct');                
+        Route::post('posts', 'FacebookController@createPost');                
+        Route::put('products/{id}', 'FacebookController@updateProduct');
+        Route::delete('products/{id}', 'FacebookController@deleteProduct');
     });
     
     
@@ -86,6 +98,7 @@ Route::group(['middleware' => ['verify.token']], function () {
 });
 
 Route::post('receive/{licenseId}', 'MessageController@receive');
+Route::get('facebook', 'FacebookController@index');
 
 
 
