@@ -8,9 +8,12 @@ use App\Services\ChatProService;
 use App\Services\ChatProAdminService;
 use App\Services\GoogleService;
 use App\Business\MessageBusiness;
+use App\Services\FacebookService;
+use App\Services\ProductService;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      *
@@ -18,20 +21,29 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ChatProService::class, function($app){
-            return new ChatProService(new MessageBusiness());
+        
+        $this->app->singleton(ChatProService::class, function($app){
+            return new ChatProService($app->make(MessageBusiness::class));
         });
 
-        $this->app->bind(ChatProAdminService::class, function($app){
+        $this->app->singleton(ChatProAdminService::class, function($app){
             return new ChatProAdminService();
         });
 
-        $this->app->bind(GoogleService::class, function($app){
+        $this->app->singleton(GoogleService::class, function($app){
             return new GoogleService();
         });
 
-        $this->app->bind(MessageBusiness::class, function($app){
+        $this->app->singleton(MessageBusiness::class, function($app){
             return new MessageBusiness();
+        });
+
+        $this->app->singleton(ProductService::class, function($app){
+            return new ProductService($app->make(FacebookService::class), $app->make(ChatProService::class));
+        });
+
+        $this->app->singleton(FacebookService::class, function($app){
+            return new FacebookService();
         });
     }
 

@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\ChatProService;
+use App\Services\ProductService;
 
 class OperationsController extends Controller
 {
     
     private $chatProService;
+    private $productService;
 
-    public function __construct(ChatProService $chatProService) {
+    public function __construct(
+        ChatProService $chatProService, 
+        ProductService $productService) {
+
         $this->chatProService = $chatProService;
+        $this->productService = $productService;
     }
     
     public function contacts(Request $request)
@@ -27,6 +33,11 @@ class OperationsController extends Controller
     public function sendMessage(Request $request)
     {                
         return $this->buildResponse($this->chatProService->sendMessage($request ,$request->get('config_chatpro')));
+    }
+
+    public function sendProduct($id, Request $request)
+    {                
+        return $this->buildResponse($this->productService->sendProduct($id, $request ,$request->get('config_chatpro')));
     }
 
     public function getProfile(Request $request) 

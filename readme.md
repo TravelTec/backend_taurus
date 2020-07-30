@@ -38,6 +38,10 @@ values(1, null, 'password_client', 'FjRWKj9xSkwCqLyRdt2QiGrEJs87iPRWVdHaJARm', '
 - Para funcionamento da atualização deve ser gerado uma `KEY` no console do google com permissões de uso da API `Distance Matrix API`, e setado na variavel de ambiente `TOKEN_APP_GOOGLE`
 - Criada rota para calculo de distancia entre endereços, a mesma foi adicionada a collection do postman na pasta `Google`.
 
+## ATUALIZAÇÃO 29/07/2020
+- Para funcionamento da atualização as novas variaveis de ambiente precisam ser setadas: `FACEBOOK_APP_ID`, `FACEBOOK_APP_SECRET`, `FACEBOOK_SECRET_TOKEN` e os novos campos `page_id` e `catalog_id` devem ser configurados (tabela `configurations`)
+- Rotas para uso da integração do facebook criadas na collection do postman na pasta `Facebook`. As rotas usam a proteção por token e precisam que a `license_id` seja passada nos headers da requisição para que a configuração seja buscada.
+
 ## Ambiente 
 Configure as variaveis de ambiente de acordo com as configurações de infra necessárias.
 
@@ -58,6 +62,10 @@ Configure as variaveis de ambiente de acordo com as configurações de infra nec
 | CHATPRO_ADMIN_USER | Usuario/Email do painel da chat pro || Sim |
 | CHATPRO_ADMIN_PASSWORD | Senha do painel da chat pro || Sim |
 | TOKEN_APP_GOOGLE | Token gerado no console do google para uso das APIs || Sim |
+| FACEBOOK_APP_ID | Id da app do facebook  || Sim |
+| FACEBOOK_APP_SECRET | App secret do facebook || Sim |
+| FACEBOOK_SECRET_TOKEN | Secret do facebook || Sim |
+
 
 ## Resource User
 O Resource de usuarios é utilizado para gerenciar os usuarios da API, esses usuarios são utilizados para criar token de acesso geral ou seja, quando se precisa acessar a API sem que exista nenhum atendente logado. 
