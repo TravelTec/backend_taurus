@@ -26,7 +26,10 @@ class ProductService {
         if ($product['name'] != null) {
             $requestChatPro = new Request();
             $requestChatPro->merge([
-                'caption'=>'*' . $product['name']  . '*,' . ' _' . $product['description'] . '_, ' . 'Preço: *' . $product['price'] . '*',
+                'caption'=>'*' . $product['name']  . '*,' . 
+                            ' _' . $product['description'] . '_, ' .
+                            'Preço: *' . $product['price'] . '*, ' .
+                            'Link: https://www.facebook.com/commerce/products/'. $product['id'] .'/',
                 'url'=>$product['image_url'],
                 'number'=>$request->get('number')
             ]);
