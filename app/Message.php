@@ -13,7 +13,7 @@ class Message extends Model
         "provider_id",
         "contact_id",
         "message",
-        "sent_received"        
+        "sent_received"       
     ];
 
     public function license(){

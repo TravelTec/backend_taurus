@@ -6,25 +6,33 @@ use App\Message;
 use Illuminate\Http\Request;
 
 use App\Business\MessageBusiness;
+use App\Business\DialogAirfaresBusiness;
 use App\Configuration;
 
 class MessageController extends Controller
 {
     
     private $business;
+    private $dialog;
 
-    public function __construct(MessageBusiness $business) {
+    public function __construct(MessageBusiness $business, DialogAirfaresBusiness $dialog) {
         $this->business = $business;
+        $this->dialog = $dialog;
     }
 
     public function receive($licenseId, Request $request)
     {
         if ($request->get('Type') == 'receveid_message') {
+            
             $contactId = $request->get('Body')['Info']['RemoteJid'];
             $message = $request->get('Body')['Text'];        
             $config = Configuration::find($licenseId);
 
-            return $this->buildResponse($this->business->receiveMessage($contactId, $message, $config));
+            $messageCreated = $this->business->receiveMessage($contactId, $message, $config);
+            
+            $dialogCreated = $this->dialog->verify($message, $messageCreated->session_id, $config);
+
+            return $this->buildResponse($dialogCreated);
         }
 
         return $this->buildResponse(['not_mapped']);

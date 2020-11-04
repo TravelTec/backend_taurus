@@ -61,18 +61,22 @@ class ChatProService {
      }
 
     public function sendMessage($request, Configuration $config) {
+        return $this->sendMessageWithParams($request->get('number'), $request->get('message'), $request->get('clerk_id'), $config);
+    }
+
+    public function sendMessageWithParams($number, $message, $clerkId, Configuration $config) {
         $requestPayload = [            
-            'menssage'=>$request->get('message'),
-            'number'=>$request->get('number')
+            'menssage'=>$message,
+            'number'=>$number
         ];
         
         $response = $this->prepareRequest($config)->post($this->makeUrl($config, "send_message"), $requestPayload);
 
         if ($response->ok()) {
-            $this->messageBusiness->sendMessage($request->get('number') . '@s.whatsapp.net', 
-                                                $request->get('message'), 
+            $this->messageBusiness->sendMessage($number . '@s.whatsapp.net', 
+                                                $message, 
                                                 $config,
-                                                $request->get('clerk_id'));
+                                                $clerkId);
             return $response->json();
         }
 

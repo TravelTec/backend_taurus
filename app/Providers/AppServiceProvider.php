@@ -8,8 +8,10 @@ use App\Services\ChatProService;
 use App\Services\ChatProAdminService;
 use App\Services\GoogleService;
 use App\Business\MessageBusiness;
+use App\Business\DialogAirfaresBusiness;
 use App\Services\FacebookService;
 use App\Services\ProductService;
+use App\Services\TravelTecService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -44,6 +46,14 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(FacebookService::class, function($app){
             return new FacebookService();
+        });
+
+        $this->app->singleton(DialogAirfaresBusiness::class, function($app){
+            return new DialogAirfaresBusiness($app->make(ChatProService::class), $app->make(TravelTecService::class));
+        });
+
+        $this->app->singleton(TravelTecService::class, function($app){
+            return new TravelTecService();
         });
     }
 

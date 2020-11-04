@@ -10,7 +10,7 @@ use App\Clerk;
 use Illuminate\Support\Carbon;
 
 class MessageBusiness {
-
+    
     public function sendMessage(string $contactId, string $message, Configuration $config, $clerkId = null) {
         
         $session = $this->verifySession($contactId, $config, $clerkId);
